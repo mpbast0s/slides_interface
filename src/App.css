@@ -126,3 +126,24 @@ th:nth-child(odd),td:nth-child(odd) {
 }
 
 
+.lista{
+  display: block;
+  position: absolute;
+  padding: 10%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5%;
+  width: 80%;
+  height: 80%;
+
+  margin: 2%;
+}
+
+.convidaddo_lista{
+  display: block;
+  margin: 5px;
+  background-color: #DDD;
+
+
+  color: #6c5172;
+  font-family: Rajdhani, serif;
+}
