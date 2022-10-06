@@ -61,7 +61,10 @@ const App: FC = () => {
   return (
     <div className="App">
       <div className="header">
-      <button onClick={handleClick} className="bot_para_ter_lista">llista</button>
+      <button onClick={handleClick} className="bot_para_ter_lista">
+        <span style={{ display: toggle ? 'block' : 'none' }}>Abrir lista</span>
+        <span style={{ display: toggle ? 'none' : 'block' }}>Fechar Lista</span>
+      </button>
         <div className="inputContainer">
           <input
             type="text"
