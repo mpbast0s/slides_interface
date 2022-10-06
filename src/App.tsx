@@ -20,6 +20,13 @@ const App: FC = () => {
   const [priority, setPriority] = useState<number>(0);
   const [people, setPeople] = useState<Person[]>([]);
 
+  
+  const [toggle, setToggle] = useState(true);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
+
   const deferredPeople = useDeferredValue(people);
   const sortedPeople = useMemo(() => {
     const people = [...deferredPeople];
@@ -54,6 +61,7 @@ const App: FC = () => {
   return (
     <div className="App">
       <div className="header">
+      <button onClick={handleClick} className="bot_para_ter_lista">llista</button>
         <div className="inputContainer">
           <input
             type="text"
@@ -113,6 +121,14 @@ const App: FC = () => {
           ))}       
 
         </Carousel>
+        <div className="lista" style={{ display: toggle ? 'none' : 'block' }}>
+          <p>Lista:</p>
+        {sortedPeople.map(person => (
+          <div key={person.id} className="convidaddo_lista">
+            <th  className="nome_lista">Nome: {person.name} | Cargo: {person.position}</th>
+          </div>
+        ))}         
+        </div>
       
       </div>
     </div>
